@@ -1,1 +1,3 @@
 https://github.com/adonisw0rick/MediaPlayer.git
+
+https://adonisw0rick.github.io/MediaPlayer/
