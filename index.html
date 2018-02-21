@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 3vh;
+        }
+    #logo{
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+    }
+    #time{
+        position: relative;
+        color: red;
+        z-index: 20;
+    }
+    #contenedor{
+        border: 1px solid black;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-around;
+        background-color: rgba(76,76,76,1);
+    }
+    #contenedorvideo{
+        height: 20em;
+    }
+    header{
+        width: 100%;
+    }
+    #videoycontroles{
+        width: 75%;
+    }
+    video{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .elementolista{
+        background-color: rgba(255,105,82,1);
+        border-radius: 2em;
+        border: 5px ridge black;
+    }
+    .elementolista:hover{
+        background-color: orange;
+    }
+    .select:hover{
+        background-color: rgba(138,18,0,1);
+    }
+    .select{
+        color: red;
+        background-color: rgba(138,18,0,1);
+    }
+    .controles{
+        position: relative;
+        width: 100%;
+    }
+    #lista{
+        position: relative;
+        width: 25%;
+    }
+    footer{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: 0.4em auto;
+    }
+    button{
+        display: block;
+        text-align: center;
+        margin: 0.4em auto;
+        font-size: 3vh;
+        width: 100%;
+    }
+    button img{
+        margin-left: 2em;
+        width: 1em;
+        padding-top: 0.2em;
+    }
+    #progress-bar2{
+        width: 70%;
+    }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <!--logotipo svg-->
+            <div id="logo">
+            <svg title='audiovideo' viewBox="0 0 150 20">
+                <symbol id="logotipo">
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839" sodipodi:sides="5" sodipodi:cx="51.143009" sodipodi:cy="12.756317" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 55.002345,12.98572 -2.365621,0.997623 -0.51929,2.51431 -1.679813,-1.941557 -2.55172,0.283091 1.32744,-2.197571 -1.05776,-2.339351 2.500216,0.583384 1.897988,-1.7288891 0.217778,2.5581221 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596106" transform="matrix(0.87095801,0,0,0.75605383,-37.04054,0.66034466)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-3" sodipodi:sides="5" sodipodi:cx="52.935184" sodipodi:cy="8.4611712" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 56.794521,8.6905743 -2.365622,0.9976228 -0.519289,2.5143099 -1.679813,-1.941557 -2.551721,0.283091 1.32744,-2.1975714 -1.05776,-2.3393503 2.500216,0.5833838 1.897988,-1.7288892 0.217779,2.5581224 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596101" transform="matrix(0.87095801,0,0,0.75605383,-37.04054,0.66034466)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-0" sodipodi:sides="5" sodipodi:cx="59.030052" sodipodi:cy="6.6657839" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 62.889388,6.895187 -2.365621,0.9976228 -0.51929,2.5143102 -1.679813,-1.9415575 -2.55172,0.2830912 1.32744,-2.1975714 -1.05776,-2.3393502 2.500216,0.5833837 1.897988,-1.7288891 0.217778,2.5581223 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596099" transform="matrix(0.87095801,0,0,0.75605383,-37.04054,0.66034466)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-9" sodipodi:sides="5" sodipodi:cx="62.177082" sodipodi:cy="11.816964" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 66.036418,12.046367 -2.365622,0.997623 -0.519289,2.51431 -1.679813,-1.941557 -2.55172,0.283091 1.32744,-2.197571 -1.057761,-2.3393507 2.500217,0.5833838 1.897988,-1.7288892 0.217778,2.5581221 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596106" transform="matrix(0.87095801,0,0,0.75605383,-37.04054,0.66034466)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-2" sodipodi:sides="5" sodipodi:cx="56.897038" sodipodi:cy="14.656559" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 60.756374,14.885962 -2.365622,0.997623 -0.519289,2.51431 -1.679813,-1.941557 -2.551721,0.283091 1.32744,-2.197572 -1.05776,-2.33935 2.500216,0.583384 1.897988,-1.728889 0.217779,2.558122 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596109" transform="matrix(0.87095801,0,0,0.75605383,-37.04054,0.66034466)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-1" sodipodi:sides="5" sodipodi:cx="51.143009" sodipodi:cy="12.756317" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 55.002345,12.98572 -2.365621,0.997623 -0.51929,2.51431 -1.679813,-1.941557 -2.55172,0.283091 1.32744,-2.197571 -1.05776,-2.339351 2.500216,0.583384 1.897988,-1.7288891 0.217778,2.5581221 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596106" transform="matrix(0.87095801,0,0,0.75605383,-0.9438142,0.84933236)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-3-8" sodipodi:sides="5" sodipodi:cx="52.935184" sodipodi:cy="8.4611712" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 56.794521,8.6905743 -2.365622,0.9976228 -0.519289,2.5143099 -1.679813,-1.941557 -2.551721,0.283091 1.32744,-2.1975714 -1.05776,-2.3393503 2.500216,0.5833838 1.897988,-1.7288892 0.217779,2.5581224 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596101" transform="matrix(0.87095801,0,0,0.75605383,-0.9438142,0.84933236)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-0-5" sodipodi:sides="5" sodipodi:cx="59.030052" sodipodi:cy="6.6657839" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 62.889388,6.895187 -2.365621,0.9976228 -0.51929,2.5143102 -1.679813,-1.9415575 -2.55172,0.2830912 1.32744,-2.1975714 -1.05776,-2.3393502 2.500216,0.5833837 1.897988,-1.7288891 0.217778,2.5581223 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596099" transform="matrix(0.87095801,0,0,0.75605383,-0.9438142,0.84933236)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-9-4" sodipodi:sides="5" sodipodi:cx="62.177082" sodipodi:cy="11.816964" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 66.036418,12.046367 -2.365622,0.997623 -0.519289,2.51431 -1.679813,-1.941557 -2.55172,0.283091 1.32744,-2.197571 -1.057761,-2.3393507 2.500217,0.5833838 1.897988,-1.7288892 0.217778,2.5581221 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596106" transform="matrix(0.87095801,0,0,0.75605383,-0.9438142,0.84933236)"
+                    />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path839-2-6" sodipodi:sides="5" sodipodi:cx="56.897038" sodipodi:cy="14.656559" sodipodi:r1="3.866148" sodipodi:r2="1.933074"
+                        sodipodi:arg1="0.059371226" sodipodi:arg2="0.68768976" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 60.756374,14.885962 -2.365622,0.997623 -0.519289,2.51431 -1.679813,-1.941557 -2.551721,0.283091 1.32744,-2.197572 -1.05776,-2.33935 2.500216,0.583384 1.897988,-1.728889 0.217779,2.558122 z"
+                        inkscape:transform-center-x="-0.262257" inkscape:transform-center-y="0.053596109" transform="matrix(0.87095801,0,0,0.75605383,-0.9438142,0.84933236)"
+                    />
+                    <ellipse style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path1502" cx="30.899553" cy="9.927083" rx="7.4650292" ry="5.8586307" />
+                    <path sodipodi:type="star" style="opacity:1;fill:yellow;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                        id="path1504" sodipodi:sides="5" sodipodi:cx="30.616072" sodipodi:cy="10.305059" sodipodi:r1="3.8777115" sodipodi:r2="1.9388556"
+                        sodipodi:arg1="0.81986726" sodipodi:arg2="1.4481858" inkscape:flatsided="false" inkscape:rounded="0" inkscape:randomized="0"
+                        d="m 33.261905,13.139881 -2.408704,-0.910521 -2.115597,1.468044 0.121626,-2.57218 -2.049949,-1.5584015 2.483874,-0.6791737 0.848659,-2.4311899 1.413492,2.1524281 2.574449,0.055843 -1.610288,2.0094476 z"
+                        inkscape:transform-center-x="0.14655411" inkscape:transform-center-y="-0.22812785" />
+                    </g>
+                </symbol>
+                <use id="logot" href="#logotipo"></use>
+            </svg>
+            </div>
+        </header>
+        <div id="videoycontroles">
+            <div class="video">
+                <!--<audio id='audio' src="music.mp3" ></audio>-->
+                <div id="contenedorvideo">
+
+                
+                <video id='video' src="avance.webm">
+                    
+                    <track id="subs" label="Subtitle" kind="subtitles" srclang="es" src="grabacionsub.vtt">
+                </video>
+                </div>
+                <input id='progress-bar2' type="range" size="310" min='0' max='100' value='0'></input>
+                <span id="time"></span>
+            </div>
+            <div class="controles">
+                <svg id='audiovideo' title='audiovideo' viewBox="0 0 150 20" >
+                    <symbol id="stop">
+                        <title>stop</title>
+                        <rect style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4504" width="18.520834" height="13.985119" x="21.922617" y="1.4226136" />
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.9471392;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4589" width="2.0307922" height="8.7596531" x="27.938301" y="4.3199983" />
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.9471392;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4589-4" width="2.0307922" height="8.7596531" x="32.359184" y="4.3271241" />
+                        </g>
+                    </symbol>
+                    <symbol id="sig">
+                        <title>sig</title>
+                        <rect style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4504-1" width="18.520834" height="13.985119" x="65.389885" y="1.4226213" />
+                        <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="M 70.766451,3.3624146 V 13.567772 l 4.157737,-5.0081834 z" id="path4541-03" inkscape:connector-curvature="0" />
+                        <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="M 75.093996,3.2732586 V 13.478617 l 4.157739,-5.0081854 z" id="path4541-0-2" inkscape:connector-curvature="0" />
+                        </g>
+                    </symbol>
+                    <symbol id="plus">
+                        <title>plus</title>
+                        <rect style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4504-9" width="18.520834" height="13.985119" x="86.367561" y="1.5171037" />
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4606" width="0.94494045" height="7.7485118" x="94.966522" y="4.6354127" />
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4606-8" width="0.94494045" height="7.7485123" x="8.9165545" y="-99.119484" transform="rotate(89.357671)" />
+                        </g>
+                    </symbol>
+                    <symbol id="ant">
+                        <title>ant</title>
+                        <rect style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4504-6" width="18.520834" height="13.985119" x="0.85044599" y="1.2336335" />
+                        <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="M 12.46062,13.108595 12.50535,2.9033356 8.3257032,7.8932506 Z" id="path4541-4" inkscape:connector-curvature="0" />
+                        <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="M 8.1327262,13.178784 8.1774522,2.9735236 3.9978045,7.9634396 Z" id="path4541-0-3" inkscape:connector-curvature="0" />
+                        </g>
+                    </symbol>
+                    <symbol id="play">
+                        <title>play</title>
+                        <rect style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            id="rect4504-8" width="18.520834" height="13.985119" x="43.845238" y="1.4226213" />
+                        <path style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.32778645px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="m 50.814738,4.1704456 v 9.0935404 l 7.16159,-4.694 z" id="path4541-0" inkscape:connector-curvature="0" />
+                        </g>
+                    </symbol>
+                    <symbol id="vol">
+                        <title>vol</title>
+                        <path style="fill:red;stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                            d="m 109.04314,15.190477 c 20.94536,-0.224647 20.7018,-15.27608138 20.7018,-15.27608138 L 129.9885,15.190477 Z" id="path"
+                            inkscape:connector-curvature="0" />
+                        </g>
+                    </symbol>
+                    <symbol id="volumenup">
+                        <title>volUp</title>
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                            id="rect857" width="6.8035712" height="0.1889881" x="134.7485" y="4.7110119" />
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                            id="rect859" width="0.56696427" height="6.614583" x="137.77231" y="1.5360119" />
+                        </g>
+                    </symbol>
+                    <symbol id="volumendown">
+                        <title>volDown</title>
+                        <rect style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                            id="rect861" width="6.8035712" height="0.1889881" x="134.7485" y="12.572917" />
+                        </g>
+                    </symbol>
+                    <!--stop-->
+                
+                    <use href="#stop" />
+                    <!--siguiente-->
+                    <use href="#sig" />
+                    <!-- más 10 segundos -->
+                    <use href="#plus" />
+                    <!--Anterior-->
+                    <use href="#ant" />
+                    <!--Play-->
+                    <use href="#play" />
+                    <!--volumen-->
+                    <use href="#vol" />
+                    <use href="#volumenup" />
+                    <use href="#volumendown" />
+                </svg>
+            </div>
+        </div>
+        <div id="lista">
+            <div class="cajaboton"><button class="elementolista">Video 1 webm<img width="20%" src="iconopeli.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Video 1 ogg <img width="20%" src="iconopeli.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Video 1 mp4<img width="20%" src="iconopeli.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Audio 1<img width="20%" src="iconomusica.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Video 2<img width="20%" src="iconopeli.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Audio 2<img width="20%" src="iconomusica.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Video 3<img width="20%" src="iconopeli.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Audio 3<img width="20%" src="iconomusica.svg"/></button></div>
+            <div class="cajaboton"><button class="elementolista">Grabación<img width="20%" src="iconopeli.svg"/></button></div>
+        </div>
+        <footer><img src="ccsvg.svg"/></footer>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+<script>
+    var caca = false;
+    var vater1 = $('svg.svg2').closest('use');
+    function activarVater(elements) {
+        element = elements;
+        console.log(element.getAttribute('class'));
+
+        if (element.getAttribute('href') == '#vater') {
+            element.setAttribute('href', '#vater2');
+        }
+        else {
+            element.setAttribute('href', '#vater');
+        }
+    }
+    function tooltip(tools) {
+        // alert(tools.getAttribute('value'));
+        // console.log(tools);
+        // console.log(tools.getAttribute('value'));
+        console.log($(tools).find('title'));
+    }
+    console.log(document.getElementById("play"));
+
+    var listasrc = ["avance.webm", "avance.ogg", "avancemp4_1280.mp4", "ffmusic7.mp3", "eltiempo.ogv", "ffsephi.mp3", "vai.ogv", "music.mp3","grabacion.mp4" ];
+    var number= 0;
+    var vid = document.getElementById("video");
+
+    // function subdragon(){
+    //     if (video.getAttribute('src') == "avance.webm") {
+    //         var cambiosubs = document.getElementById('subs');
+    //         cambiosubs.setAttribute('src', 'sub.vtt');
+    //         video.textTracks[0].mode = "showing"
+    //     }
+    //     else{
+    //         video.textTracks[0].mode = "disabled"
+    //     }
+    // }
+    function subgrabacion() {
+            if (video.getAttribute('src') == "grabacion.mp4") {
+                var cambiosubs = document.getElementById('subs');
+                cambiosubs.setAttribute('src','grabacionsub.vtt');
+                video.textTracks[0].mode = "showing"
+            }
+            else {
+                video.textTracks[0].mode = "disabled"
+            }
+        }
+    // vid.onloadstart = function () {
+    //     alert("Starting to load video");
+    // };
+    document.getElementById("play").addEventListener("click", function () {
+        var boton = document.getElementsByClassName('elementolista');
+        boton[number].setAttribute('class', 'elementolista select');
+        vid.play();
+        //subdragon();
+        subgrabacion();
+        document.getElementById("play").setAttribute('style', 'visibility:hidden;');
+        document.getElementById("stop").setAttribute('style', 'visibility:visible;');
+    });
+    var color = 255;
+    document.getElementById("volumenup").addEventListener("click", function () {
+        
+                if (vid.volume < 0.9) {
+            vid.volume = vid.volume + 0.1;
+            color = color + 20;
+            document.getElementById("vol").firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:rgb(' + color + ', 0, 0);stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1');
+            }
+            });
+            document.getElementById("volumendown").addEventListener("click", function () {
+                if(vid.volume > 0.1){
+                    vid.volume = vid.volume - 0.1;
+                    color = color - 20;
+                    document.getElementById("vol").firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:rgb(' + color + ', 0, 0);stroke:#000000;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1');
+                    console.log(document.getElementById("vol").firstChild.nextSibling.nextSibling.nextSibling)
+                    
+                }
+                      
+                });
+    document.getElementById("stop").addEventListener("click", function () {
+        var boton = document.getElementsByClassName('elementolista');
+        boton[number].setAttribute('class', 'elementolista');
+        vid.pause();
+        document.getElementById("stop").setAttribute('style', 'visibility:hidden;');
+        document.getElementById("play").setAttribute('style', 'visibility:visible;');
+    });
+
+    document.getElementById("sig").addEventListener("click", function () {
+        var boton = document.getElementsByClassName('elementolista');
+        boton[number].setAttribute('class', 'elementolista');
+            if (number < 8){
+                number++
+            }
+            else{
+                number = 0;
+            }
+            var cajaboton = document.getElementsByClassName('cajaboton');
+        cajaboton[number].firstChild.appendChild(star);
+        boton[number].setAttribute('class', 'elementolista select');
+            vid.setAttribute('src',listasrc[number]);
+            vid.play();
+            //subdragon();
+            subgrabacion();
+            document.getElementById("play").setAttribute('style', 'visibility:hidden;');
+            document.getElementById("stop").setAttribute('style', 'visibility:visible;');
+        });
+        document.getElementById("sig").addEventListener("mouseover", function () {
+                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+            });
+            document.getElementById("sig").addEventListener("mouseleave", function () {
+                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:black;');
+                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:black;');
+                });
+
+                document.getElementById("ant").addEventListener("mouseover", function () {
+                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                    });
+                    document.getElementById("ant").addEventListener("mouseleave", function () {
+                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:black;');
+                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:black;');
+                    });
+
+                    document.getElementById("play").addEventListener("mouseover", function () {
+                            this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                        });
+                        document.getElementById("play").addEventListener("mouseleave", function () {
+                            this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:black;');
+                        });
+
+                        document.getElementById("stop").addEventListener("mouseover", function () {
+                                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                            });
+                            document.getElementById("stop").addEventListener("mouseleave", function () {
+                                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                            });
+                            document.getElementById("plus").addEventListener("mouseover", function () {
+                                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;');
+                                });
+                                document.getElementById("plus").addEventListener("mouseleave", function () {
+                                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                    this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                });
+                                document.getElementById("volumenup").addEventListener("mouseover", function () {
+                                        this.firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;stroke:red;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;stroke:red;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                    });
+                                    document.getElementById("volumenup").addEventListener("mouseleave", function () {
+                                        this.firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                        this.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                    });
+                                    document.getElementById("volumendown").addEventListener("mouseover", function () {
+                                            this.firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'fill:red;stroke:red;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                        });
+                                        document.getElementById("volumendown").addEventListener("mouseleave", function () {
+                                            this.firstChild.nextSibling.nextSibling.nextSibling.setAttribute('style', 'opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1');
+                                            });
+
+                var star = document.createElement('img');
+                star.setAttribute('src','estrella.svg');
+                star.setAttribute('width', '10%');
+
+        document.getElementById("ant").addEventListener("click", function () {
+                var boton = document.getElementsByClassName('elementolista');
+                boton[number].setAttribute('class', 'elementolista');
+                if (number > 0) {
+                    number--
+                }
+                else {
+                    number = 8;
+                }
+                var cajaboton = document.getElementsByClassName('cajaboton');
+                cajaboton[number].firstChild.appendChild(star);
+                boton[number].setAttribute('class','elementolista select');
+                vid.setAttribute('src', listasrc[number]);
+                vid.play();
+                //subdragon();
+                subgrabacion();
+                document.getElementById("play").setAttribute('style', 'visibility:hidden;');
+                document.getElementById("stop").setAttribute('style', 'visibility:visible;');
+            });
+            // var myVar = setInterval(myTimer, 1000);
+            // function myTimer(){
+            //     let tiempom = vid.currentTime / 60;
+            //     let tiempos = vid.currentTime % 60;
+            //     if(tiempos == 60){
+            //         document.getElementById("time").innerHTML = '0' + Math.ceil(tiempom - 1) + ':0' + Math.round(00);
+            //     }
+            //     if(tiempos < 10){
+            //         document.getElementById("time").innerHTML = '0' +Math.ceil(tiempom - 1) + ':0' + Math.round(tiempos);
+            //     }else{
+            //         document.getElementById("time").innerHTML = '0' +Math.ceil(tiempom - 1) + ':' + Math.round(tiempos);
+            //     }
+            // }
+
+            var progreso = document.getElementById('progress-bar2');
+
+            progreso.addEventListener("click", function(){
+                var time = progreso.value * vid.duration /  100;
+                vid.currentTime = time;
+                console.log('SEGUNDOS: '+progreso.getAttribute('value'));
+            });
+            vid.addEventListener("timeupdate", function () {
+                    //  Current time  
+                    // progreso.setAttribute('value',vid.currentTime);
+                    if((vid.getAttribute('src') == 'ffmusic7.mp3')|| (vid.getAttribute('src') == 'ffsephi.mp3') ||(vid.getAttribute('src') == 'music.mp3')){
+                        vid.setAttribute('display','none');
+                        var fondo = document.getElementById('contenedorvideo')
+                        fondo.setAttribute('style','background-image: url("iconomusica.svg");background-repeat: no-repeat;background-size:75vw 30vh;background-position: auto;')
+                    }
+                    else{
+                        vid.setAttribute('display','inline-block');
+                        var fondo = document.getElementById('contenedorvideo')
+                        fondo.setAttribute('style', 'background-image: none;')
+                    }
+                    var vTime = vid.currentTime;
+                var vLength = vid.duration.toFixed(1);
+                //     var progressBar = document.getElementById('progress-bar');
+                var progressBar2 = document.getElementById('progress-bar2');
+                var percentage = Math.floor((100 / vid.duration) * vid.currentTime);
+                // console.log(percentage);
+                // progressBar.value = percentage;
+                progressBar2.value = percentage;
+                // progressBar.innerHTML = percentage + '% played';
+
+
+                    if(vTime%60 == 60){
+                        document.getElementById("time").innerHTML = '0' + Math.ceil((vTime / 60) - 1) + ':0' + Math.round(0);
+                    }
+                    else if(vTime % 60 < 10){
+                        document.getElementById("time").innerHTML = '0' + Math.ceil((vTime / 60) - 1) + ':0' + Math.ceil((vTime % 60)-1);
+                    }
+                    else{
+                        document.getElementById("time").innerHTML = '0' + Math.ceil((vTime / 60) - 1) + ':' + Math.ceil((vTime % 60) - 1);
+                    }
+                    
+                    console.log(vTime.toFixed(1));
+                    console.log((vLength - vTime).toFixed(1));
+                    if (vid.ended){
+                        var boton = document.getElementsByClassName('elementolista');
+                        boton[number].setAttribute('class', 'elementolista');
+                        if (number < 8) {
+                            number++
+                        }
+                        else {
+                            number = 0;
+                        }
+                        var cajaboton = document.getElementsByClassName('cajaboton');
+                        cajaboton[number].firstChild.appendChild(star);
+                        boton[number].setAttribute('class', 'elementolista select');
+                        vid.setAttribute('src', listasrc[number]);
+                        vid.play();
+                        //subdragon();
+                        subgrabacion();
+                        document.getElementById("play").setAttribute('style', 'visibility:hidden;');
+                        document.getElementById("stop").setAttribute('style', 'visibility:visible;');
+                        
+                    }
+                }, false);
+        document.getElementById("plus").addEventListener("click", function () {
+                vid.currentTime = vid.currentTime + 10;
+                if (vid.ended) {
+                if (number < 8) {
+                    number++
+                }
+                else {
+                    number = 0;
+                }
+                vid.setAttribute('src', listasrc[number]);
+                vid.play();
+                //subdragon();
+                subgrabacion();
+                document.getElementById("play").setAttribute('style', 'visibility:hidden;');
+                document.getElementById("stop").setAttribute('style', 'visibility:visible;');
+
+            }
+                vid.play();
+                //subdragon();
+                subgrabacion();
+                });
+                var full = false;
+                document.getElementById("video").addEventListener("dblclick", function () {
+                        var elem = document.getElementById("videoycontroles");
+                    if (full == false){
+                        if (elem.requestFullscreen) {
+                            elem.requestFullscreen();
+                            full = true;
+                        } else if (elem.mozRequestFullScreen) {
+                            elem.mozRequestFullScreen();
+                            full = true;
+                        } else if (elem.webkitRequestFullscreen) {
+                            elem.webkitRequestFullscreen();
+                            full = true;
+                        }
+                    }
+                    else{
+                        full = false;
+                            if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                            document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        }
+                    }
+                        
+                    });
+                
+</script>
+</html>
